@@ -71,8 +71,8 @@ class MyPublisher():
         num = Num()
         num.header.stamp =  rospy.Time.now()
         num.header.frame_id = "step"
-        num.l = int((4096 /(3.14*2)) * (self.integration("ang_step_l", wl) % 3.14*2))
-        num.r = int((4096 /(3.14*2)) * (self.integration("ang_step_r", wr) % 3.14*2))
+        num.l = int(652.229 * (self.integration("ang_step_l", wl) % 3.14*2))
+        num.r = int(652.229 * (self.integration("ang_step_r", wr) % 3.14*2))
         self.num.publish(num)
 
 def main():
