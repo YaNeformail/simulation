@@ -31,7 +31,7 @@
 
 ## Инструкция по запуску
 
-`roscore` - запуск ядра рос
+`roscore` - запуск ядра рос  
 `rosrun snar version2.py` - запуск основного кода с расчётами и публикатором
 `rosrun snar listen.py` - запуск слушателя, который принимает значения энкодеров
 `export TURTLEBOT3_MODEL=waffle; roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch` - запуск пульта управления, команды которого слушает основной код
