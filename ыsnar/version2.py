@@ -34,14 +34,14 @@ class MyPublisher():
         return temp
 
     def update(self, msg):
-        wlt = (2*msg.linear.x/0.033-msg.angular.z*0.287/0.033)/2
-        wrt = (2*msg.linear.x/0.033+msg.angular.z*0.287/0.033)/2
+        wlt = (2*msg.linear.x/0.033-msg.angular.z*8.697)/2
+        wrt = (2*msg.linear.x/0.033+msg.angular.z*8.697)/2
 
         wl = self.transitProcess("ang_speed_l", wlt)
         wr = self.transitProcess("ang_speed_r", wrt)
 
-        V = (0.033/2)*(wl+wr)
-        ang = (0.033/0.287)*(wr-wl)
+        V = 0.0165*(wl+wr)
+        ang = 0.115*(wr-wl)
 
         x = self.integration("x", math.cos(self.z)*V)
         y = self.integration("y", math.sin(self.z)*V)
